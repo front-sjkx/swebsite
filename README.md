@@ -2,6 +2,7 @@
 ===
 前端部门
 ---
+<<<<<<< HEAD
 >学习使我快乐
 ---
 # 主要任务
@@ -45,3 +46,5 @@ npm start
 # build for production with minification（打包生产环境）
 npm run build
 ```
+=======
+>>>>>>> d804a5bd46d248344538be7fd04838e91741c8f9
