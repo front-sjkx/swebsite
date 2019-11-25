@@ -2,37 +2,38 @@
 ===
 前端部门
 ---
-<<<<<<< HEAD
+
 >学习使我快乐
----
-# 主要任务
-- [ ]需要完成
-    - [ ] 主页
-    - [ ] 前端页面
-    - [ ] 后台页面
-    - [ ] 新媒体页面
-    - [ ] 游戏部页面
-    - [ ] 网安页面
-- [x]已经完成
 
-# 目录结构
+## 主要任务
 
-######目录结构描述
-├── Readme.md                   // 项目简介
-├──public
+- [ ] :checkered_flag:需要完成<br>
+    - [ ] 前端页面<br>
+    - [ ] 后台页面<br>
+    - [ ] 新媒体页面<br>
+    - [ ] 游戏部页面<br>
+    - [ ] 网安页面 <br>
+- [x] 已经完成
+
+## 目录结构
+
+ 目录结构描述
+
+├── readme                 // 项目简介<br>
+├── public<br>
 
 ## 主要技术
----
--  "react": "^16.12.0",
--    "react-dom": "^16.12.0",
+
+-  "react": "^16.12.0"
+-    "react-dom": "^16.12.0"
 -    "react-scripts": "3.2.0"
--     更多后续...
+-    更多后续...
 
 ## 项目搭建
----
-使用`create-react-app`脚手架初始化项目
+
+使用[create-react-app](https://www.html.cn/create-react-app/docs/getting-started/)脚手架初始化项目
 ## Build Setup（启动项目）
----
+
 ```
 #git clone
 git clone https://github.com/front-sjkx/swebsite.git
@@ -46,5 +47,4 @@ npm start
 # build for production with minification（打包生产环境）
 npm run build
 ```
-=======
->>>>>>> d804a5bd46d248344538be7fd04838e91741c8f9
+
