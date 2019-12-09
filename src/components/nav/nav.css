@@ -1,0 +1,21 @@
+.header {
+  width: 100vw;
+  height: 4rem;
+  background: #161616;
+  color: var(--wt-color-white);
+}
+.header .menu {
+  margin: auto;
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: var(--wt-color-dark);
+}
+.header .menu .icon {
+  width: max-content;
+}
+.header .menu img {
+  width: 4rem;
+  background-size: contain;
+}

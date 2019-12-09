@@ -1,0 +1,32 @@
+
+
+.header {
+    width: 100vw;
+    height: 4rem;
+    background: #27282c;
+
+    color: var(--wt-color-white);
+
+    .menu {
+        // background:#27282c;
+        margin: auto;
+        padding: 0 3rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        background: var(--wt-color-dark);
+
+        .icon {
+            width: max-content;
+            height: max-content;
+            line-height: 3.5rem;
+        }
+
+        img {
+            width: 4rem;
+            background-size: contain;
+        }
+    }
+
+}

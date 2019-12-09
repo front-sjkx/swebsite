@@ -1,0 +1,36 @@
+.page-content {
+    margin: 0 auto;
+
+    .section-content {
+        color: #fff;
+        background: #161616;
+        padding: 10rem 3rem 0 3rem;
+
+        .wt-container {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            max-width: 1276px;
+        }
+    }
+
+    .intro-text {
+        .pre-text {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #afb1b3;
+        }
+
+        h1 {
+            font-size: 57px;
+            font-weight: 700;
+            line-height: 80px;
+            letter-spacing: -2px;
+            margin-bottom: 50px;
+
+        }
+    }
+    .play {
+        transiton:opacity .5s ease-in;
+        
+    }
+}

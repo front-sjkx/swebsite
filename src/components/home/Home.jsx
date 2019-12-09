@@ -1,11 +1,16 @@
-import React,{Component} from 'React'
+import React, { Component } from 'react'
+import Nav from '../nav/nav'
+import Content from '../page-content/content'
 export default class Home extends Component {
-    constructor (props){
-        supers(props);
+    constructor(props) {
+        super(props);
     }
-    render(){
-        return(
-            
+    render() {
+        return (
+            <div>
+                <Nav />
+                <Content />
+            </div>
         )
     }
 }
