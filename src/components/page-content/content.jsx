@@ -1,39 +1,121 @@
 import React, { Component } from 'react'
 import './content.scss'
-import './css/base.scss'
-// import '../../utils/play'
+import Play from '../play/play'
+import Menu from '../menu/menu'
+import Texty from 'rc-texty'
+import 'rc-texty/assets/index.css';
+import Video from '../video/video'
 export default class Content extends Component {
     constructor(props) {
         super(props);
     }
-    componentDidMount() {
-        document.documentElement.className = "js"; var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e }; supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+    state = {
+        show: true,
+        mode: 'smooth',
+        type: 'left',
+    };
+    getEnter = (e) => {
+        switch (e.index) {
+            case 0:
+                return {
+                    rotate: 90,
+                    opacity: 0,
+                    y: -60,
+                };
+            case 10:
+            case 1:
+                return {
+                    y: -60,
+                    x: -10,
+                    opacity: 0,
+                };
+            case 9:
+            case 2:
+                return {
+                    y: -60,
+                    x: 20,
+                    opacity: 0,
+                };
+            case 3:
+                return {
+                    y: 60,
+                    opacity: 0,
+                };
+            case 8:
+            case 4:
+                return {
+                    x: 30,
+                    opacity: 0,
+                };
+            case 5:
+                return {
+                    enter: [
+                        {
+                            scale: 2,
+                            opacity: 0,
+                            type: 'set',
+                        },
+                        { scale: 1.2, opacity: 1, duration: 300 },
+                        { scale: 0.9, duration: 200 },
+                        { scale: 1.05, duration: 150 },
+                        { scale: 1, duration: 100 },
+                    ],
+                    leave: {
+                        opacity: 0, scale: 0,
+                    },
+                };
+            case 6:
+                return {
+                    scale: 0.8,
+                    x: 30,
+                    y: -10,
+                    opacity: 0,
+                };
+            case 7:
+                return {
+                    scale: 0.8,
+                    x: 30,
+                    y: 10,
+                    opacity: 0,
+                };
+            default:
+                return {
+                    opacity: 0,
+                };
+        }
     }
     render() {
         return (
             <div className='page-content'>
-                <div className="section-content">
+                <div className="section-content-black">
+
                     <div className="wt-container">
                         <div className='intro-text'>
-                            <div className='pre-text'>数据科学与技术学院</div>
-                            <div><h1>科技创新协会</h1></div>
+                            <Texty className='pre-text'
+                                enter={this.getEnter}>
+                                {this.state.show && '数据科学与技术学院'}
+                            </Texty>
+                            <Texty className='h1' type={this.state.type}
+                                mode={this.state.mode} component='h1' >科技创新协会
+                                </Texty>
                         </div>
-                        <div className='play'>
-                            <div className="frame">
-                                <div className="frame__title-wrap">
-                                    <h1 className="frame__title">Interactive Particles</h1>
-                                </div>
-                                <a className="frame__github" href="https://github.com/brunoimbrizi/interactive-particles">GitHub</a>
-                                <div className="frame__links">
-                                    <a className="https://tympanus.net/Development/AnimatedMeshLines/">Previous Demo</a>
-                                    <a className="https://tympanus.net/codrops/?p=37503">Article</a>
-                                </div>
-                            </div>
+                        <Play />
+                    </div>
+                    <div className='menu'>
+                        <Menu />
+                    </div>
 
-                        </div>
+                </div>
+                <div className="section-content-white">
+                    <div className='video-container'>
+                        <Video />
+                    </div>
+                    <div className="wt-container">
+                       
                     </div>
                 </div>
             </div>
+
         )
     }
 }
