@@ -1,15 +1,36 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import Nav from '../nav/nav'
 import Content from '../page-content/content'
-import { Button, notification, Icon } from 'antd'
+import Footer from "../footer/footer";
+import {Button, notification} from 'antd'
 import SignIn from '../singIn/signIn'
+
 export default class Home extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            visible: false,
+            register: false,
+        };
+        this.handleRegisterCancel = this.handleRegisterCancel.bind(this);
+        this.showRegisterModal = this.showRegisterModal.bind(this);
     }
-    state = {
-        visible: false,
-    };
+
+
+    handleRegisterCancel() {
+        this.setState({
+            register: false,
+        });
+    }
+
+    showRegisterModal() {
+
+        this.setState({
+            register: true,
+        });
+    }
+
     componentDidMount() {
         const close = () => {
             console.log(
@@ -21,23 +42,19 @@ export default class Home extends Component {
             const key = `open${Date.now()}`;
             const btn = (
                 <Button type="dashed" size="small" onClick={() => {
-                    setTimeout(() => {
-                        this.setState({
-                            visible: true,
-                        })
-                    })
-                    console.log(this.state.visible)
+
+                    this.showRegisterModal();
                     notification.close(key)
                 }}>
                     Join in
-    </Button>
+                </Button>
             );
             notification.open({
                 message: 'Hello Word',
                 description:
                     '欢迎加入数据科协！',
                 btn,
-                key,
+                key:1,
                 onClose: close,
                 placement: 'bottomRight',
                 style: {
@@ -50,13 +67,17 @@ export default class Home extends Component {
             });
         };
         openNotification('bottomRight')
+
     }
+
     render() {
         return (
             <div>
-                <Nav />
-                <Content />
-                <SignIn visible={this.state.visible} />
+                <Nav/>
+                <Content/>
+
+                <SignIn visible={this.state.register}
+                        handleCancel={this.handleRegisterCancel}/>
             </div>
         )
 

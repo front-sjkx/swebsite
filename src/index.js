@@ -10,7 +10,7 @@ import configureStore, { history } from './redux/configureStore'
 const store = configureStore();
 const render = () => {
     ReactDOM.render(<Provider store={store}> <App history={history} /></Provider>, document.getElementById('root'));
-}
+};
 //hot relaoding
 render();
 if (module.hot) {

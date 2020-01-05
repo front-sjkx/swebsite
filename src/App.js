@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import {ConnectedRouter} from 'connected-react-router';
 import { Route,Switch} from 'react-router';
-import routers from './rooter/Rooter'
+import routers from './router/index.js';
 
 const App=({history})=> {
   return (
@@ -19,6 +19,9 @@ const App=({history})=> {
       </Switch>
     </ConnectedRouter>
   );
-}
+};
+App.propTypes = {
+    history: PropTypes.object,
+};
 
 export default App;
