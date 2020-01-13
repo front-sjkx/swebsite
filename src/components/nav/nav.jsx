@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import logo from '../../assets/logo.png'
 import './nav.scss'
-import {Icon} from 'antd'
+import {Icon, Button} from 'antd'
 import SignIn from "../singIn/signIn";
+
 
 const IconFont = Icon.createFromIconfontCN({
     scriptUrl: '//at.alicdn.com/t/font_1552045_ysm7crtsmi.js',
@@ -38,11 +39,11 @@ export default class Nav extends Component {
             <div className='header'>
                 <header className='menu'>
                     <div className="headerContent">
-
                         <img src={logo} alt="logo"/>
-      </div>
-                    <div className='icon' onClick={this.showRegisterModal}>
-                        <IconFont type="icon-user1" style={{fontSize: '26px', color: '#fff'}}/>
+                    </div>
+                    <div className='icon'>
+                        <Button type={'circle'} icon={'user'} onClick={this.showRegisterModal}></Button> <Button
+                        type={'circle'} icon={'home'}></Button>
                     </div>
                 </header>
                 <SignIn visible={this.state.register}

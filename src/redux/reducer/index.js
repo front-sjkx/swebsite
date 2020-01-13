@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import { connectRouter } from 'connected-react-router';
-import { changeModalVisible} from './user'
+import {user} from './user'
 const rootReducer = history => combineReducers({
-    changeModalVisible,
+    user,
     router: connectRouter(history)
 })
 export default rootReducer;
